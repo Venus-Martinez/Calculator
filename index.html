@@ -1,0 +1,69 @@
+<!-- Division By Zero Calculator App - HTML Structure
+Author: Venus Martinez
+Date: February 16, 2026
+Description: This HTML file defines the structure of the Division By Zero Calculator App,
+    including the layout of the calculator interface, buttons, and display.
+    It also includes links to the CSS stylesheet for styling and the JavaScript file for
+    functionality. The app features a toggle for safe division mode, allowing users to
+    enable or disable special handling for division by zero cases.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <h1 class="title">Division By Zero Calculator</h1>
+        <a href="https://github.com/venus-martinez" target="_blank" rel="noopener noreferrer" class="github-link">
+            View on GitHub
+        </a>
+    </header>
+    <main class="calc">
+        <p class="safe-division">Safe Division : <label for="safeToggle" class="safe-toggle"><em class="status"
+                    id="safeStatus">Enabled</em></label><input id="safeToggle" type="checkbox" checked
+                onchange="toggleSafeDivision(this.checked)"></p>
+
+        <section class="screen" aria-label="Calculator display">
+            <div id="display" class="display">0</div>
+            <div id="note" class="note"></div>
+        </section>
+
+        <section class="keys" aria-label="Calculator buttons">
+            <button class="key key-ac" type="button" onclick="allClear()">AC</button>
+            <button class="key key-operator" type="button" onclick="chooseOperator('/')">/</button>
+            <button class="key key-operator" type="button" onclick="chooseOperator('*')">*</button>
+
+            <button class="key" type="button" onclick="press('7')">7</button>
+            <button class="key" type="button" onclick="press('8')">8</button>
+            <button class="key" type="button" onclick="press('9')">9</button>
+            <button class="key key-operator" type="button" onclick="chooseOperator('-')">-</button>
+
+            <button class="key" type="button" onclick="press('4')">4</button>
+            <button class="key" type="button" onclick="press('5')">5</button>
+            <button class="key" type="button" onclick="press('6')">6</button>
+            <button class="key key-operator" type="button" onclick="chooseOperator('+')">+</button>
+
+            <button class="key" type="button" onclick="press('1')">1</button>
+            <button class="key" type="button" onclick="press('2')">2</button>
+            <button class="key" type="button" onclick="press('3')">3</button>
+            <button class="key key-equal" type="button" onclick="equals()">=</button>
+
+            <button class="key key-zero" type="button" onclick="press('0')">0</button>
+            <button class="key" type="button" onclick="press('.')">.</button>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <h2 class="footer-header">Division By Zero Calculator App</h2>
+        <p>Division By Zero Calculator App. &copy; 2026 <a href="https://github.com/venus-martinez" target="_blank">Venus Martinez</a>. All rights reserved.</p>
+
+        <script src="JS/calc.js"></script>
+</body>
+
+</html>
