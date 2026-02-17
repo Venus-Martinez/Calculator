@@ -11,6 +11,9 @@
     font-weight: 600;
     color: #d26714df;
     margin-bottom: 18px;
+}
+
+.textShadow {
     text-shadow: 2px 2px 4px rgba(232, 146, 34, 0.6);
 }
 
@@ -158,4 +161,5 @@ body {
 .site-footer a:hover {
     color: #0c6dfe;
     text-decoration: underline;
+
 }
