@@ -19,61 +19,109 @@ Description: This HTML file defines the structure of the Division By Zero Calcul
 </head>
 
 <body>
-    <header class="site-header">
-        <h1 class="title textShadow">Division By Zero Calculator</h1>
-        <a href="https://github.com/venus-martinez" target="_blank" rel="noopener noreferrer" class="github-link textShadow">
-            View on GitHub
-        </a>
-        <br/>
-        <br/>
-        <p>Division by zero has been something of an issue.</p>
-        <p>This calculator solves that by showing that just because you have 5 apples and you have no one to give them to, doesn't mean there are no apples anymore.</p>
-        <p>It just means that you didn't distribute those apples to anyone.</p>
-        <p>The quotient ("q") represents how many apples were given out to the amount of people present.</p>
-        <p>The reserve ("r") represents the apples that were not given out in the event that no one showed up.</p>
-        <p>Hence the Division By Zero idea came about for me.</p>
-    </header>
-    <main class="calc">
-        <p class="safe-division">Safe Division : <label for="safeToggle" class="safe-toggle"><em class="status"
-                    id="safeStatus">Enabled</em></label><input id="safeToggle" type="checkbox" checked
-                onchange="toggleSafeDivision(this.checked)"></p>
+    <div class="page">
+        <header class="site-header">
 
-        <section class="screen" aria-label="Calculator display">
-            <div id="display" class="display">0</div>
-            <div id="note" class="note"></div>
+            <div>
+                <h1 class="title">Division By Zero Calculator</h1>
+
+                <p class="subtitle">
+                    A calculator with defined division-by-zero behavior.
+                </p>
+            </div>
+
+            <a href="https://github.com/venus-martinez" target="_blank" rel="noopener noreferrer" class="github-link">
+                View on GitHub ↗
+            </a>
+
+        </header>
+        <main class="calc">
+            <section class="safe-panel">
+
+                <div class="safe-panel-text">
+                    <div class="safe-heading">
+                        Safe Division
+
+                        <span class="status status-enabled" id="safeStatus">
+                            Enabled
+                        </span>
+                    </div>
+
+                    <p class="safe-description">
+                        Preserves the dividend as the remainder when dividing by zero.
+                    </p>
+                </div>
+
+                <label class="toggle-switch" for="safeToggle">
+
+                    <input id="safeToggle" type="checkbox" checked aria-label="Safe Division" onchange="toggleSafeDivision(this.checked)">
+
+                    <span class="toggle-slider"></span>
+
+                </label>
+
+            </section>
+
+            <section class="screen" aria-label="Calculator display">
+                <div id="display" class="display">0</div>
+                <div id="note" class="note"></div>
+            </section>
+
+            <section class="keys" aria-label="Calculator buttons">
+                <button class="key key-ac" type="button" onclick="allClear()">AC</button>
+                <button class="key key-operator" type="button" onclick="chooseOperator('/')">÷</button>
+                <button class="key key-operator" type="button" onclick="chooseOperator('*')">×</button>
+
+                <button class="key" type="button" onclick="press('7')">7</button>
+                <button class="key" type="button" onclick="press('8')">8</button>
+                <button class="key" type="button" onclick="press('9')">9</button>
+                <button class="key key-operator" type="button" onclick="chooseOperator('-')">−</button>
+
+                <button class="key" type="button" onclick="press('4')">4</button>
+                <button class="key" type="button" onclick="press('5')">5</button>
+                <button class="key" type="button" onclick="press('6')">6</button>
+                <button class="key key-operator" type="button" onclick="chooseOperator('+')">+</button>
+
+                <button class="key" type="button" onclick="press('1')">1</button>
+                <button class="key" type="button" onclick="press('2')">2</button>
+                <button class="key" type="button" onclick="press('3')">3</button>
+                <button class="key key-equal" type="button" onclick="equals()">=</button>
+
+                <button class="key key-zero" type="button" onclick="press('0')">0</button>
+                <button class="key" type="button" onclick="press('.')">.</button>
+            </section>
+        </main>
+        <section class="about-feature">
+
+            <h2>What is Safe Division?</h2>
+
+            <p>
+                Safe Division provides defined behavior when the divisor is zero.
+                Instead of producing a standard calculator error, the calculator
+                returns a quotient of zero while preserving the dividend as the
+                remainder.
+            </p>
+
+            <div class="example">
+                <span>Example</span>
+
+                <code>17 ÷ 0 → q=0, r=17</code>
+            </div>
+
         </section>
+        <footer class="site-footer">
+            <h2 class="footer-header">Division By Zero Calculator App</h2>
 
-        <section class="keys" aria-label="Calculator buttons">
-            <button class="key key-ac" type="button" onclick="allClear()">AC</button>
-            <button class="key key-operator" type="button" onclick="chooseOperator('/')">/</button>
-            <button class="key key-operator" type="button" onclick="chooseOperator('*')">*</button>
-
-            <button class="key" type="button" onclick="press('7')">7</button>
-            <button class="key" type="button" onclick="press('8')">8</button>
-            <button class="key" type="button" onclick="press('9')">9</button>
-            <button class="key key-operator" type="button" onclick="chooseOperator('-')">-</button>
-
-            <button class="key" type="button" onclick="press('4')">4</button>
-            <button class="key" type="button" onclick="press('5')">5</button>
-            <button class="key" type="button" onclick="press('6')">6</button>
-            <button class="key key-operator" type="button" onclick="chooseOperator('+')">+</button>
-
-            <button class="key" type="button" onclick="press('1')">1</button>
-            <button class="key" type="button" onclick="press('2')">2</button>
-            <button class="key" type="button" onclick="press('3')">3</button>
-            <button class="key key-equal" type="button" onclick="equals()">=</button>
-
-            <button class="key key-zero" type="button" onclick="press('0')">0</button>
-            <button class="key" type="button" onclick="press('.')">.</button>
-        </section>
-    </main>
-    <footer class="site-footer">
-        <h2 class="footer-header">Division By Zero Calculator App</h2>
-        <p>Division By Zero Calculator App. &copy; 2026 <a href="https://github.com/venus-martinez" target="_blank">Venus Martinez</a>. All rights reserved.</p>
-
-        <script src="js/calc.js"></script>
+            <p>
+                Division By Zero Calculator App. &copy; 2026
+                <a href="https://github.com/venus-martinez" target="_blank" rel="noopener noreferrer">
+                    Venus Martinez
+                </a>.
+                All rights reserved.
+            </p>
+        </footer>
+    </div>
+    <script src="js/calc.js"></script>
 </body>
 
-
 </html>
-
